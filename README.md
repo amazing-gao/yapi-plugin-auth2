@@ -1,11 +1,11 @@
-# yapi-plugin-oauth
+# yapi-plugin-auth2
 
 第三方插件，基于Oauth2协议登录，在生成的配置文件中，添加如下配置即可：
 
 ```
   "plugins": [
     {
-      "name": "oauth",
+      "name": "auth2",
       "options": {
         "type": "oauth2",
         "clientId": "your client id",
@@ -31,7 +31,6 @@
 
 这里面的配置项含义如下：
 
-- `type` 固定oauth2
 - `clientId` 客户端id
 - `clientSecret` 客户端秘钥
 - `authServer` oauth2服务器地址

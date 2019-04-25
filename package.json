@@ -1,5 +1,5 @@
 {
-  "name": "yapi-plugin-oauth",
+  "name": "yapi-plugin-auth2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

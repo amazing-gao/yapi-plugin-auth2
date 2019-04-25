@@ -1,0 +1,16 @@
+{
+  "name": "yapi-plugin-oauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash.find": "^4.6.0",
+    "lodash.get": "^4.4.2"
+  }
+}

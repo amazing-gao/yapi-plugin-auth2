@@ -39,7 +39,7 @@
 - `infoPath` 通过token获取用户信息的接口地址
 - `redirectUri` 重定向地址，授权登录页面成功之后携带code跳转的目标地址
 - `state` OAuth state，默认**STATE**
-- `emailKey` 用户信息电子邮件字段key
-- `userKey` 用户信息用户名字段key
+- `emailKey` 用户信息电子邮件字段key，当值为数组时按优先级尝试获取邮箱
+- `userKey` 用户信息用户名字段key，当值为数组时按优先级尝试获取用户名
 - `buttonName` 登录按钮名称，默认**OAuth2登录**
 - `authArgs` 附加参数，单层json对象，用于格式化到**authPath**, **tokenPath**

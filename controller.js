@@ -51,9 +51,12 @@ class oauth2Controller extends baseController {
       if (tokenResult.status === 200) {
         ctx.redirect('/api/user/login_by_token?token=' + tokenResult.data.access_token);
       } else {
+        console.error('oauth2Callback.status.error', tokenResult)
         ctx.body = yapi.commons.resReturn(null, tokenResult.status, tokenResult.statusText);
       }
     } catch (err) {
+      console.error('oauth2Callback.error', err)
+
       if (err.response) {
         ctx.body = yapi.commons.resReturn(null, 400, err.response.message);
       } else {

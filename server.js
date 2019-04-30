@@ -2,6 +2,27 @@ const axios = require('axios');
 const get = require('lodash.get')
 const controller = require('./controller');
 
+
+function gets(obj, keys) {
+  let value = ''
+
+  if (Array.isArray(keys)) {
+    keys.some((key) => {
+      const v = get(obj, key)
+      if (v) {
+        value = v;
+        return true
+      }
+
+      return false
+    })
+  } else {
+    value = get(obj, keys)
+  }
+
+  return value
+}
+
 module.exports = function (options) {
   const { authServer, infoPath, userKey, emailKey, authArgs } = options;
 
@@ -20,10 +41,11 @@ module.exports = function (options) {
 
       if (info.status === 200) {
         return {
-          username: get(info.data, userKey),
-          email: get(info.data, emailKey)
+          username: gets(info.data, userKey),
+          email: gets(info.data, emailKey)
         };
       } else {
+        console.error('third_login.error', info)
         throw new Error(`${info.status} ${info.statusText}`)
       }
     } catch (error) {

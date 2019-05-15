@@ -21,9 +21,9 @@ class oauth2Controller extends baseController {
       return (ctx.body = yapi.commons.resReturn(null, 400, 'code不能为空'));
     }
 
-    if (!oauthstate) {
-      return (ctx.body = yapi.commons.resReturn(null, 400, 'state不能为空'));
-    }
+    // if (!oauthstate) {
+    //   return (ctx.body = yapi.commons.resReturn(null, 400, 'state不能为空'));
+    // }
 
     // 获取oauth2配置信息
     const opts = loadOpts();

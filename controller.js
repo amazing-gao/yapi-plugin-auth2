@@ -31,11 +31,11 @@ class oauth2Controller extends baseController {
       return (ctx.body = yapi.commons.resReturn(null, 400, 'oauth2未配置，请配置后重新启动服务'));
     }
 
-    const { authServer, tokenPath, clientId, clientSecret, redirectUri, authArgs } = opts.options;
+    const { authMethod = 'get', authServer, tokenPath, clientId, clientSecret, redirectUri, authArgs } = opts.options;
 
     try {
       const tokenResult = await axios.request({
-        method: 'get',
+        method: authMethod,
         baseURL: authServer,
         url: tokenPath,
         params: Object.assign({
